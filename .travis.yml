@@ -16,6 +16,22 @@ cache:
     - '$HOME/.gradle'
 script: "./gradlew clean build"
 
+before_deploy:
+  - zip -r nwerl-springboot2-example
+  - mkdir -p deploy
+  - mv nwerl-springboot2-example.zip deploy/nwerl-springboot2-example.zip
+
+deploy:
+  - provider: s3
+    access_key_id: AKIAU5SANQR3QTUAUFNF # Travis repo settings에 설정된 값
+    secret_access_key: CGkL0ni1vgACnC8kVsR2tTLBlK2niZJWzHtVBcn6 # Travis repo settings에 설정된 값
+    bucket: nwerl-springboot2-build
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private # zip 파일 접근을 private으로
+    local_dir: deploy # before_deploy에서 생성한 디렉토리
+    wait-until-deployed: true
+
 # CI 실행 완료 시 메일로 알람
 notifications:
   email:
