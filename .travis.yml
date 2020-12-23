@@ -17,7 +17,7 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r nwerl-springboot2-example
+  - zip -r nwerl-springboot2-example *
   - mkdir -p deploy
   - mv nwerl-springboot2-example.zip deploy/nwerl-springboot2-example.zip
 
