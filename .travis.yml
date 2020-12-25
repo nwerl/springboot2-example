@@ -40,7 +40,7 @@ deploy:
     bundle_type: zip
     application: nwerl-springboot2-example # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
     deployment_group: nwerl-springboot2-example-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
-    Region: ap-northeast-2
+    region: ap-northeast-2
     wait-until-deployed: true
 
 # CI 실행 완료 시 메일로 알람
