@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REPOSITORY=/home/ec2-user/app/step2
-PROJECT_NAME=nwerl-springboot2-example
+PROJECT_NAME=springboot2-example
 
 echo "> Build 파일 복사"
 
